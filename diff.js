@@ -1,22 +1,12 @@
-function array_diff(a, b) {
-console.log(a);
-console.log(b);
-
-//check to see if b = a
-  function loop(thing){
-    for(var i = 0; i < b.length; i++){
-      if(b[i] == thing){
-        return true;
-      }
-    }
-  }
-
-  for(var i = a.length-1; i >= 0; i--){
-    if(loop(a[i])){
+function difference(a, b) {
+for(var i = 0; i < a.length; i ++){
+  for(var j = 0; j < b.length; j++){
+    if(a[i] == b[j]){
       a.splice(i, 1);
     }
   }
-  console.log(a);
+}
+return a;
 }
 
-array_diff([1, 2, 3, 3, 4], [2])
+console.log(difference([1, 2, 3, 3, 4], [2, 3]));
